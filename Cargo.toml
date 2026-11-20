@@ -1,0 +1,22 @@
+[package]
+name = "byond-mcp"
+version = "0.1.0"
+edition = "2021"
+description = "MCP server that builds, runs and drives a BYOND world for testing"
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+png = "0.18"
+serde_json = "1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+	"Win32_Foundation",
+	"Win32_Graphics_Gdi",
+	"Win32_Storage_Xps",
+	"Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+strip = true

@@ -1,0 +1,45 @@
+// Minimal world used to smoke-test byond-mcp without a multi-minute codebase build.
+
+/world
+	name = "byond-mcp fixture"
+	mob = /mob/player
+	maxx = 5
+	maxy = 5
+	maxz = 1
+
+/world/Topic(T)
+	return "fixture:[T]"
+
+/client/New()
+	. = ..()
+	world.log << "LOGIN [key]"
+
+/mob/player
+	var/hp = 100
+	var/last_said
+	var/list/bag = list("coin" = 3, "empty" = null)
+
+/mob/player/verb/shout(msg as text)
+	last_said = msg
+	world.log << "[key] shouts [msg]"
+
+/mob/player/proc/hurt(amount)
+	hp -= amount
+	return hp
+
+/mob/player/proc/slow_add(a, b)
+	sleep(30)
+	return a + b
+
+/mob/player/proc/boom()
+	var/list/nothing = null
+	return nothing[1]
+
+/obj/crate
+	name = "crate"
+
+/proc/add(a, b)
+	return a + b
+
+/proc/who_is_usr()
+	return usr
