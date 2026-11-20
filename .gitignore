@@ -1,0 +1,7 @@
+/target
+*.dmb
+*.rsc
+*.int
+*.lk
+*.mcp.dme
+*.mcp_harness.dm
