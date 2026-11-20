@@ -3,6 +3,8 @@ name = "byond-mcp"
 version = "0.1.0"
 edition = "2021"
 description = "MCP server that builds, runs and drives a BYOND world for testing"
+repository = "https://github.com/svtn-cc/byond-mcp"
+license = "MIT"
 
 [dependencies]
 anyhow = "1"

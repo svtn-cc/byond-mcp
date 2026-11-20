@@ -38,7 +38,7 @@ Your regular `<name>.dmb` and your sources are never modified. The harness exist
 ## Installation
 
 ```sh
-git clone <this repository>
+git clone https://github.com/svtn-cc/byond-mcp.git
 cd byond-mcp
 cargo build --release
 ```
@@ -231,3 +231,7 @@ everything that is not tgstation-specific: point `--project` at `tests/world` an
 any MCP client.
 
 Changes to `dm/mcp_harness.dm` take effect after rebuilding the server and then calling `build` again.
+
+## License
+
+[MIT](LICENSE)
